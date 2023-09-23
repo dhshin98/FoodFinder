@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./header/header";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Main from "./pages/Main/main";
+import NewBusiness from "./pages/NewBusiness/newBusiness";
 
+// import Custombutton from "./component/custombutton/custombutton";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/main" element={<Main />} />
+          <Route path="/newBusiness" element={<NewBusiness />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+.headerContainer {
+    background-color: var(--app-color-primary);
+    height: 15vh;
+    width:100vw;
+    padding: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color:white;
+    box-sizing: border-box;
+    font-family: 'GKBO-Dia-Gothic_bold';
+}
+.headerMaintext{
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration : none;
+    color: #fff;
+    font-family: "GangwonState";    
+
+}
+.headerSubtext{
+    font-size: 38px;
+    font-weight: 800;
+}
