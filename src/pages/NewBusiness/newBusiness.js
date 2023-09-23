@@ -17,7 +17,7 @@ const NewBusiness = () => {
   const navigate = useNavigate();
   return (
     <NewBusinessContainer>
-      <div>
+      <div onClick={() => navigate("/checklist")}>
         <Custombutton
           name={"체크리스트로 가상창업"}
           buttonSize="large"
@@ -25,7 +25,7 @@ const NewBusiness = () => {
           textColor="white"
         />
       </div>
-      <div>
+      <div onClick={() => navigate("/newmap")}>
         <Custombutton
           name={"지도기반 가상창업"}
           buttonSize="large"

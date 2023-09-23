@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Main from "./pages/Main/main";
 import NewBusiness from "./pages/NewBusiness/newBusiness";
-
-// import Custombutton from "./component/custombutton/custombutton";
+import Checklist from "./pages/Checklist/checklist";
+import Loader from "./pages/Loader/loader";
+import Analyze from "./pages/Analyze/analyze";
+import NewMap from "./pages/NewMap/newMap";
 function App() {
   return (
     <div>
@@ -15,6 +17,10 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/main" element={<Main />} />
           <Route path="/newBusiness" element={<NewBusiness />} />
+          <Route path="/checklist" element={<Checklist />} />
+          <Route path="/loader" element={<Loader />} />
+          <Route path="/analyze" element={<Analyze />} />
+          <Route path="/newmap" element={<NewMap />} />
         </Routes>
       </BrowserRouter>
     </div>

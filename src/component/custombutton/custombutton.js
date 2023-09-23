@@ -14,8 +14,9 @@ const Custombutton = ({
         backgroundColor: backgroundColor,
         color: textColor,
         //버튼 크기 선택 옵션
-        width: buttonSize === "small" ? "5rem" : "15rem",
-        height: buttonSize === "small" ? "5rem" : "5rem",
+        width: buttonSize === "small" ? "10rem" : "15rem",
+        height: buttonSize === "small" ? "2rem" : "5rem",
+        textAlign: "center",
       }}
     >
       {name}
