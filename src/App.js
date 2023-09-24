@@ -8,6 +8,7 @@ import Checklist from "./pages/Checklist/checklist";
 import Loader from "./pages/Loader/loader";
 import Analyze from "./pages/Analyze/analyze";
 import NewMap from "./pages/NewMap/newMap";
+import Userpage from "./pages/Userpage/userpage";
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/loader" element={<Loader />} />
           <Route path="/analyze" element={<Analyze />} />
           <Route path="/newmap" element={<NewMap />} />
+          <Route path="/userpage" element={<Userpage />} />
         </Routes>
       </BrowserRouter>
     </div>

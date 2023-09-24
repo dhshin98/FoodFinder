@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useCallback, useState, useEffect } from "react";
 import Custombutton from "../../component/custombutton/custombutton";
 import styled from "styled-components";
-
+import Toggle from "../../utils/toggle";
 const ChecklistContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,11 +46,21 @@ const Checklist = () => {
       <QuestionContainer>
         <div>창업하려고 하는 지역이 어디인가요?(법정동 기준)</div>
       </QuestionContainer>
-      <Answer>토글</Answer>
+      <Answer>
+        <Toggle
+          text="법정동 선택"
+          search_results={[{ id: 0, comment: "대흥동" }]}
+        />
+      </Answer>
       <QuestionContainer>
         <div>어떤 업종을 창업하고자 하나요?(요식업 업종 선택)</div>
       </QuestionContainer>
-      <Answer>토글</Answer>
+      <Answer>
+        <Toggle
+          text="요식업 선택"
+          search_results={[{ id: 0, comment: "한식" }]}
+        />
+      </Answer>
       <QuestionContainer>
         <div>프렌차이즈인가요?</div>
       </QuestionContainer>

@@ -26,11 +26,14 @@ const Main = () => {
           textColor="white"
         />
       </div>
-      <Custombutton
-        name={"기존 자영업자"}
-        buttonSize="large"
-        backgroundColor="#337CCF"
-      />
+      <div onClick={() => navigate("/userpage")}>
+        <Custombutton
+          name={"기존 자영업자"}
+          buttonSize="large"
+          backgroundColor="#337CCF"
+          textColor="white"
+        />
+      </div>
     </Mainpage>
   );
 };

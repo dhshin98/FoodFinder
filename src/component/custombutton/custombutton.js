@@ -1,6 +1,29 @@
-import "./custombutton.element.css";
+import React from "react";
 import styled from "styled-components";
-const Custombutton = ({
+
+// Styled 버튼 컴포넌트 생성
+const StyledButton = styled.button`
+  // background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid #fbca1f;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+`;
+
+const CustomButton = ({
   type,
   name,
   buttonSize,
@@ -8,20 +31,20 @@ const Custombutton = ({
   textColor,
 }) => {
   return (
-    <button
-      className={(type === 1 ? `primary` : `secondary`) + ` btnContainer`}
+    <StyledButton
+      className={(type === 1 ? "primary" : "secondary") + " btnContainer"}
       style={{
         backgroundColor: backgroundColor,
         color: textColor,
-        //버튼 크기 선택 옵션
+        // 버튼 크기 선택 옵션
         width: buttonSize === "small" ? "10rem" : "15rem",
-        height: buttonSize === "small" ? "2rem" : "5rem",
+        height: buttonSize === "small" ? "3rem" : "5rem",
         textAlign: "center",
       }}
     >
       {name}
-    </button>
+    </StyledButton>
   );
 };
 
-export default Custombutton;
+export default CustomButton;

@@ -11,5 +11,7 @@ export const getTitleFromLocation = (location) => {
     return "상권정보";
   } else if (location === "/newmap") {
     return "지도 기반 창업";
+  } else if (location === "/userpage") {
+    return "나의 가계부";
   }
 };
