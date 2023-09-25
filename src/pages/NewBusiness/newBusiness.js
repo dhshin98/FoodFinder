@@ -25,14 +25,14 @@ const NewBusiness = () => {
           textColor="white"
         />
       </div>
-      <div onClick={() => navigate("/newmap")}>
+      {/* <div onClick={() => navigate("/newmap")}>
         <Custombutton
           name={"지도기반 가상창업"}
           buttonSize="large"
           backgroundColor="#279EFF"
           textColor="white"
         />
-      </div>
+      </div> */}
       <div onClick={() => navigate("/main")}>
         <Custombutton
           name={"뒤로가기"}

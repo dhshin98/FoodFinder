@@ -52,7 +52,7 @@ const NewMap = () => {
           </div>
         )} */}
       </div>
-      <div onClick={() => navigate("/analyze")}>
+      <div onClick={() => navigate("/checklist")}>
         <Custombutton
           name={"제출"}
           buttonSize="small"

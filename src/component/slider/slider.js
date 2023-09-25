@@ -7,37 +7,48 @@ export default function Slider() {
 
   return (
     <div>
-      <MainSlider>
-        <Input
-          type="range"
-          style={{ color: `var(--grey-background)` }}
-          value={sliderValue}
-          onChange={(e) => setSliderValue(e.target.value)}
-          min="0"
-          max="100"
-          step="1"
-        />
+      {" "}
+      <SliderWrapper>
+        <MainSlider>
+          <Input
+            type="range"
+            style={{ color: `var(--grey-background)` }}
+            value={sliderValue}
+            onChange={(e) => setSliderValue(e.target.value)}
+            min="0"
+            max="100"
+            step="1"
+          />
 
-        {splitValues.map((posValue, index) => {
-          return (
-            <>
-              <Circle position={posValue} currentValue={sliderValue} />
-              <RangeButton
-                position={posValue}
-                onClick={(e) => setSliderValue(posValue)}
-              >
-                {posValue}%
-              </RangeButton>
-            </>
-          );
-        })}
-      </MainSlider>
+          {splitValues.map((posValue, index) => {
+            return (
+              <>
+                <Circle position={posValue} currentValue={sliderValue} />
+                <RangeButton
+                  position={posValue}
+                  onClick={(e) => setSliderValue(posValue)}
+                >
+                  {posValue}%
+                </RangeButton>
+              </>
+            );
+          })}
+        </MainSlider>
+      </SliderWrapper>
     </div>
   );
 }
 
+const SliderWrapper = styled.div`
+  width: 80vw;
+  height: 10vh;
+  padding: 1rem;
+
+  border-radius: 5px;
+  background: var(--white);
+`;
 const MainSlider = styled.div`
-  width: 60vw;
+  width: 100%;
   /* margin: 10px 15%; */
   position: relative;
   height: 6px;

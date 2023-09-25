@@ -10,7 +10,7 @@ const StyledButton = styled.button`
   font-size: 18px;
   border: 3px solid white;
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  box-shadow: 0.1em 0.1em transparent;
 
   &:hover {
     transform: translate(-0.05em, -0.05em);
