@@ -41,6 +41,8 @@ const UserStatisticsContainer = styled.div`
 // userStatisticsItem 스타일드 컴포넌트
 const UserStatisticsItem = styled.div`
   width: 100%;
+  height: 100%;
+  margin: 1rem;
 `;
 
 // userBtn 스타일드 컴포넌트
@@ -258,7 +260,7 @@ const Userpage = () => {
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart
               width={400}
-              height={300}
+              height={400}
               data={dummyData}
               margin={{
                 top: 20,
@@ -289,7 +291,7 @@ const Userpage = () => {
         <UserStatisticsItem>
           <BarChart
             width={400}
-            height={300}
+            height={400}
             data={dummyData}
             margin={{
               top: 20,
