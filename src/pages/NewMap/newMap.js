@@ -3,28 +3,56 @@ import React, { useCallback, useState, useEffect } from "react";
 import Custombutton from "../../component/custombutton/custombutton";
 import styled from "styled-components";
 
-import { Map } from "react-kakao-maps-sdk";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
+
+const MapContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75vh;
+  align-items: center;
+`;
 
 const NewMap = () => {
   const navigate = useNavigate();
-  //   var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
-  //   var options = {
-  //     //지도를 생성할 때 필요한 기본 옵션
-  //     center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-  //     level: 3, //지도의 레벨(확대, 축소 정도)
-  //   };
+  const { kakao } = window;
+  const [address, setAddress] = useState(null); // 현재 좌표의 주소를 저장할 상태
+  const getAddress = (lat, lng) => {
+    const geocoder = new kakao.maps.services.Geocoder(); // 좌표 -> 주소로 변환해주는 객체
+    const coord = new kakao.maps.LatLng(37.5566803113882, 126.904501286522); // 주소로 변환할 좌표 입력
+    const callback = function (result, status) {
+      if (status === kakao.maps.services.Status.OK) {
+        setAddress(result[0].address);
+      }
+    };
+    geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+  };
 
-  //   var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
   return (
-    <div>
+    <MapContainer>
       <div id="map">
         <Map
-          center={{ lat: 33.5563, lng: 126.79581 }} // 지도의 중심 좌표
-          style={{ width: "800px", height: "600px" }} // 지도 크기
+          center={{ lat: 37.5512304, lng: 126.93927431 }} // 지도의 중심 좌표
+          style={{ width: "80vw", height: "60vh" }} // 지도 크기
           level={3} // 지도 확대 레벨
-        ></Map>
+        >
+          <MapMarker
+            position={{ lat: 37.5512304, lng: 126.93927431 }}
+          ></MapMarker>{" "}
+          {/* <button onClick={getAddress}>현재 좌표의 주소 얻기</button> */}
+        </Map>
+
+        {/* {address && (
+          <div>
+            현재 좌표의 주소:
+            <p>address_name: {address.address_name}</p>
+            <p>region_1depth_name: {address.region_1depth_name}</p>
+            <p>region_2depth_name: {address.region_2depth_name}</p>
+            <p>region_3depth_name: {address.region_3depth_name}</p>
+          </div>
+        )} */}
       </div>
-      <div onClick={() => navigate("/newBusiness")}>
+      <div onClick={() => navigate("/analyze")}>
         <Custombutton
           name={"제출"}
           buttonSize="small"
@@ -40,7 +68,7 @@ const NewMap = () => {
           textColor="white"
         />
       </div>
-    </div>
+    </MapContainer>
   );
 };
 export default NewMap;

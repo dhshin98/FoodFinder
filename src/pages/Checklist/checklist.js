@@ -4,8 +4,7 @@ import Custombutton from "../../component/custombutton/custombutton";
 import styled from "styled-components";
 import Dropdown from "../../component/dropdown/dropdown";
 import Slider from "../../component/slider/slider";
-
-import { KakaoMapModal } from "../../component/kakaomap/kakaomap";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
 
 const ChecklistContainer = styled.div`
   display: flex;
@@ -36,14 +35,34 @@ const Answer = styled.div`
   height: 10vh;
 `;
 
+const StyledBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  cursor: auto;
+`;
+const StyledModalContainer = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .myMap {
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px rgb(71, 181, 255);
+  }
+`;
 const Checklist = () => {
   const navigate = useNavigate();
   const [selectedItem, setSelectedItem] = useState("All");
   const menuItems = ["대흥동", "마포동", "서대문구", "영등포구"];
 
   const handleSelect = (selectedItem) => {
-    navigate("/newmap");
-    console.log(selectedItem);
+    // navigate("/newmap");
     // 선택한 항목에 따라 네비게이션을 처리합니다.
     // if (selectedItem === "Option 1") {
     //   // 예시: Option 1을 선택한 경우 "/page1"로 네비게이션
