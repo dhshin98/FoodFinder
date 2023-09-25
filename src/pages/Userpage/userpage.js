@@ -21,15 +21,7 @@ import {
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
 const User = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-around;
-  // align-items: center;
-  // padding: 1rem;
-  // width: 100%;
-  // height: 80vh;
-
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -49,7 +41,6 @@ const UserStatisticsContainer = styled.div`
 // userStatisticsItem 스타일드 컴포넌트
 const UserStatisticsItem = styled.div`
   width: 100%;
-  height: 100%;
 `;
 
 // userBtn 스타일드 컴포넌트
@@ -258,16 +249,16 @@ const Userpage = () => {
 
   return (
     <User className="userContainer">
-      <h1 className="userTitle">
+      <h2 className="userTitle">
         <b>{userData.name}</b>님 안녕하세요!
-      </h1>
-      <h1> 💸 매출액 변화</h1>
+      </h2>
+      <h2> 💸 매출액 변화</h2>
       <UserStatisticsContainer>
         <UserStatisticsItem>
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart
-              width={500}
-              height={400}
+              width={400}
+              height={300}
               data={dummyData}
               margin={{
                 top: 20,
@@ -293,11 +284,11 @@ const Userpage = () => {
           </ResponsiveContainer>
         </UserStatisticsItem>
       </UserStatisticsContainer>
-      <h1>매출등급 변화</h1>
+      <h2>매출등급 변화</h2>
       <UserStatisticsContainer>
         <UserStatisticsItem>
           <BarChart
-            width={500}
+            width={400}
             height={300}
             data={dummyData}
             margin={{
@@ -323,14 +314,19 @@ const Userpage = () => {
           </BarChart>
         </UserStatisticsItem>
       </UserStatisticsContainer>
-      <h1>고객리뷰</h1>
+      <h2>고객리뷰</h2>
       <UserStatisticsContainer>
         <UserStatisticsItem>
           <ReactWordcloud words={words} />
         </UserStatisticsItem>
       </UserStatisticsContainer>
       <div className="userBtn" onClick={() => navigate("/main")}>
-        <Custombutton buttonSize="small" name={"뒤로가기"} />
+        <Custombutton
+          buttonSize="small"
+          name={"뒤로가기"}
+          backgroundColor="#191D88"
+          textColor="white"
+        />
       </div>
     </User>
   );
