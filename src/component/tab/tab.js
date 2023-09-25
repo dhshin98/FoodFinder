@@ -20,10 +20,9 @@ import {
   Sector,
 } from "recharts";
 import { PureComponent } from "react";
-
 import image1 from "../../image/코다차야.jpeg";
 import image2 from "../../image/빠빠빠.jpeg";
-
+import image from "../../image/search.svg";
 export default function Tab() {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabClickHandler = (index) => {
@@ -278,7 +277,9 @@ export default function Tab() {
             // 폐업정보에 대한 리액트 차트를 렌더링하는 코드
             <div>
               <ItemCard>
-                <ImageItem src={image1} />
+                <img src="../../image/코다차야.jpeg" width="100" height="130" />
+                {/* <img src="../../image/코다차야.jpeg" alt="코다차야" /> */}
+                {/* <ImageItem src={image1} /> */}
                 <ItemIfo>
                   <h4>상업명: 코다차야</h4>
                   <h5>폐업일 : 2023년 03월 19일 </h5>
@@ -289,7 +290,8 @@ export default function Tab() {
               </ItemCard>
 
               <ItemCard>
-                <ImageItem src={image2} />
+                <img src="../../image/빠빠빠.jpeg" width="100" height="130" />
+                {/* <ImageItem src={image2} /> */}
                 <ItemIfo>
                   <h4>상업명: 빠빠빠치킨</h4>
                   <h5>폐업일 : 2020년 08월 04일 </h5>
@@ -363,6 +365,7 @@ const ClickSlide = styled.div`
 const ImageItem = styled.img`
   width: 6rem;
   height: 8rem;
+  border-radius: 1rem;
 `;
 const ItemCard = styled.div`
   display: flex;
