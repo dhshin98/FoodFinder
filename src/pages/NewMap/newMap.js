@@ -32,7 +32,7 @@ const NewMap = () => {
           textColor="white"
         />
       </div>
-      <div onClick={() => navigate("/newBusiness")}>
+      <div onClick={() => navigate("/checklist")}>
         <Custombutton
           name={"뒤로가기"}
           buttonSize="small"

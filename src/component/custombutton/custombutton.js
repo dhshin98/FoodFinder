@@ -8,13 +8,14 @@ const StyledButton = styled.button`
   padding: 0.6em 1.3em;
   font-weight: 900;
   font-size: 18px;
-  border: 3px solid #fbca1f;
+  border: 3px solid white;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
 
   &:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
+    cursor: pointer;
   }
 
   &:active {

@@ -9,7 +9,9 @@ import Loader from "./pages/Loader/loader";
 import Analyze from "./pages/Analyze/analyze";
 import NewMap from "./pages/NewMap/newMap";
 import Userpage from "./pages/Userpage/userpage";
+const mapSelected = false;
 function App() {
+  const mapSelected = false;
   return (
     <div>
       <BrowserRouter>

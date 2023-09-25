@@ -41,3 +41,36 @@ code {
   font-weight: 700;
   font-style: normal;
 }
+:root {
+  /*========== Colors ==========*/
+  --first: #266bff;
+  --second: #588DFF;
+  --black: #161212;
+  --black-second: #262624;
+  --white: #ffffff;
+  --white-second: #f9f9f9;
+  --grey: #5B5757;
+  --grey-light: #C1C1C1;
+  --grey-lighter: #959595;
+  --shadow: #a5acb1;
+  --grey-background: #EBEBEB;
+  --purple: #9A30AE;
+  --red: #da1b1b;
+  --blue-light: #6ac0ee;
+  --green-mint: #10afaf;
+  
+  /*========== Font Weights ==========*/
+  --bold: 700;
+  --bold-900: 900;
+  /*========== Font Size ==========*/
+  --small: .813rem;
+}
+* {
+  box-sizing:border-box;
+}
+input {
+  all: unset;
+}
+body {
+  font-size:var(--normal);
+}
