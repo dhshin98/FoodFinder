@@ -217,7 +217,7 @@ export default function Tab() {
         <h2>{tabContArr[activeIndex].tabCont}</h2>
         <div>
           {activeIndex === 0 && (
-            <div>
+            <PopContainer>
               <ResponsiveContainer width={350} height={350}>
                 <LineChart width={400} height={300} data={data}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -235,7 +235,7 @@ export default function Tab() {
                   <Line type="monotone" dataKey="택시" stroke="#0088FE" />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
+            </PopContainer>
           )}
 
           {activeIndex === 1 && (
@@ -324,6 +324,7 @@ const TabSetting = styled.div`
 `;
 
 const TabList = styled.ul`
+  display: flex;
   justify-content: center;
   align-items: center;
   display: flex;

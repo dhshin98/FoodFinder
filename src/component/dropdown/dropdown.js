@@ -83,6 +83,8 @@ const Arrow = styled.div`
 const SelectWrapper = styled.div`
   /* width: 240px; */
   /* width: 60vw; */
+  max-height: 30vh;
+  overflow-y: scroll;
   padding-bottom: 10px;
   /* margin: 0 30% 40px 30%; */
   border: 1px solid var(--shadow);
