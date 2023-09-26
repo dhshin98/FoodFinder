@@ -317,7 +317,8 @@ const TabSetting = styled.div`
   /* padding: 0 40px 40px 40px;
   margin: 40px 30% 40px 30%; */
   width: 90vw;
-  height: 60vh;
+  /* height: 70%; */
+  /* height: 60vh; */
   border: 1px solid #a5acb1;
   border-radius: 5px;
   background: #fff;
