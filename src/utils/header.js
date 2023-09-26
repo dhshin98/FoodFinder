@@ -13,5 +13,7 @@ export const getTitleFromLocation = (location) => {
     return "지도 기반 창업";
   } else if (location === "/userpage") {
     return "나의 가계부";
+  } else if (location === "/recommend") {
+    return "장소 추천";
   }
 };

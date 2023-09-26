@@ -7,10 +7,11 @@ import Tab from "../../component/tab/tab";
 const AnalyzeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 75vh;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
+  height: 85vh;
+  position: absolute;
 `;
 
 const Analyze = () => {
@@ -19,6 +20,14 @@ const Analyze = () => {
     <AnalyzeContainer>
       <h2>마포구 대흥동은 "대학상권"입니다</h2>
       <Tab />
+      <div onClick={() => navigate("/recommend")}>
+        <Custombutton
+          name={"추천장소 GO!"}
+          buttonSize="small"
+          backgroundColor="#1450A3"
+          textColor="white"
+        />
+      </div>
       <div onClick={() => navigate("/newBusiness")}>
         <Custombutton
           name={"뒤로가기"}

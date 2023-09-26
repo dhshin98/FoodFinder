@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./header/header";
-import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Main from "./pages/Main/main";
 import NewBusiness from "./pages/NewBusiness/newBusiness";
@@ -9,7 +8,7 @@ import Loader from "./pages/Loader/loader";
 import Analyze from "./pages/Analyze/analyze";
 import NewMap from "./pages/NewMap/newMap";
 import Userpage from "./pages/Userpage/userpage";
-
+import Recommend from "./pages/Recommend/recommend";
 function App() {
   return (
     <div>
@@ -24,6 +23,7 @@ function App() {
           <Route path="/analyze" element={<Analyze />} />
           <Route path="/newmap" element={<NewMap />} />
           <Route path="/userpage" element={<Userpage />} />
+          <Route path="/recommend" element={<Recommend />} />
         </Routes>
       </BrowserRouter>
     </div>
