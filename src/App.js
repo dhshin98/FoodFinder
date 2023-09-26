@@ -9,21 +9,87 @@ import Analyze from "./pages/Analyze/analyze";
 import NewMap from "./pages/NewMap/newMap";
 import Userpage from "./pages/Userpage/userpage";
 import Recommend from "./pages/Recommend/recommend";
+import LogoPage from "./pages/logo/logo";
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/main" element={<Main />} />
-          <Route path="/newBusiness" element={<NewBusiness />} />
-          <Route path="/checklist" element={<Checklist />} />
-          <Route path="/loader" element={<Loader />} />
-          <Route path="/analyze" element={<Analyze />} />
-          <Route path="/newmap" element={<NewMap />} />
-          <Route path="/userpage" element={<Userpage />} />
-          <Route path="/recommend" element={<Recommend />} />
+          <Route path="/" element={<LogoPage />} />
+
+          <Route
+            path="/main"
+            element={
+              <>
+                <Header />
+                <Main />
+              </>
+            }
+          />
+          <Route
+            path="/newBusiness"
+            element={
+              <>
+                <Header />
+                <NewBusiness />
+              </>
+            }
+          />
+          <Route
+            path="/checklist"
+            element={
+              <>
+                <Header />
+                <Checklist />
+              </>
+            }
+          />
+          <Route
+            path="/loader"
+            element={
+              <>
+                <Header />
+                <Loader />
+              </>
+            }
+          />
+          <Route
+            path="/analyze"
+            element={
+              <>
+                <Header />
+                <Analyze />
+              </>
+            }
+          />
+          <Route
+            path="/newmap"
+            element={
+              <>
+                <Header />
+                <NewMap />
+              </>
+            }
+          />
+          <Route
+            path="/userpage"
+            element={
+              <>
+                <Header />
+                <Userpage />
+              </>
+            }
+          />
+          <Route
+            path="/recommend"
+            element={
+              <>
+                <Header />
+                <Recommend />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

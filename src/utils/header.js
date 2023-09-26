@@ -1,5 +1,5 @@
 export const getTitleFromLocation = (location) => {
-  if (location === "/main" || location === "/") {
+  if (location === "/main") {
     return "서비스 선택";
   } else if (location === "/loader") {
     return "상권 분석중...";
@@ -15,5 +15,7 @@ export const getTitleFromLocation = (location) => {
     return "나의 가계부";
   } else if (location === "/recommend") {
     return "장소 추천";
+  } else if (location == "/") {
+    return "이미지를 클릭하세요!";
   }
 };
