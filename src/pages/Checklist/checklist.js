@@ -37,23 +37,30 @@ const Checklist = () => {
   const navigate = useNavigate();
 
   // district와 menu의 초기값을 로컬 스토리지에서 가져오거나 기본값으로 설정합니다.
+  // const [selectedDistrict, setSelectedDistrict] = useState(
+  //   localStorage.getItem("district") || "All"
+  // );
+  // const [selectedMenu, setSelectedMenu] = useState(
+  //   localStorage.getItem("menu") || "All"
+  // );
   const initialDistrict = localStorage.getItem("district") || "All";
   const initialMenu = localStorage.getItem("menu") || "All";
 
-  // const [selectedDistrict, setSelectedDistrict] = useState(initialDistrict);
-  // const [selectedMenu, setSelectedMenu] = useState(initialMenu);
+  const [selectedDistrict, setSelectedDistrict] = useState(initialDistrict);
+  const [selectedMenu, setSelectedMenu] = useState(initialMenu);
 
-  // const handleDistrictSelect = (district) => {
-  //   navigate("/newmap");
-  //   setSelectedDistrict("district");
-  //   localStorage.setItem("district", district); // 로컬 스토리지에 저장
-  // };
+  const handleDistrictSelect = (district) => {
+    setSelectedDistrict(district);
+    localStorage.setItem("district", district); // 로컬 스토리지에 저장
+    localStorage.setItem("menu", "All");
+    handleSelect();
+  };
 
-  // const handleMenuSelect = (menu) => {
-  //   setSelectedMenu("menu");
-  //   localStorage.setItem("menu", menu); // 로컬 스토리지에 저장
-  // };
-  // const [selectedItem, setSelectedItem] = useState("All");
+  const handleMenuSelect = (menu) => {
+    setSelectedMenu(menu);
+    localStorage.setItem("menu", menu); // 로컬 스토리지에 저장
+  };
+
   const districtList = [
     "마포동",
     "대흥동",
@@ -552,12 +559,12 @@ const Checklist = () => {
         <h3>창업하려고 하는 지역이 어디인가요?</h3>
         <h4>(법정동 선택)</h4>
       </Question>
-      <Dropdown textOptions={districtList} onSelect={handleSelect} />
+      <Dropdown textOptions={districtList} onSelect={handleDistrictSelect} />
       <Question>
         <h3>어떤 업종을 창업하고자 하나요?</h3>
         <h4>(요식업 업종 선택)</h4>
       </Question>
-      <Dropdown textOptions={menuList} />
+      <Dropdown textOptions={menuList} onSelect={handleMenuSelect} />
       <Question>
         <h3> 권리금과 임대료가 예산의 몇 % 인가요??</h3>
       </Question>{" "}
