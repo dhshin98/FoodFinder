@@ -36,16 +36,16 @@ const Recommend = () => {
     <MapContainer>
       <div id="map">
         <Map
-          center={{ lat: 37.5486382, lng: 126.9394977 }} // 지도의 중심 좌표
+          center={{ lat: 37.5646993, lng: 126.9394972 }} // 지도의 중심 좌표
           style={{ width: "80vw", height: "60vh" }} // 지도 크기
           level={3} // 지도 확대 레벨
         >
           <MapMarker
-            position={{ lat: 37.5486382, lng: 126.9394977 }}
+            position={{ lat: 37.5646993, lng: 126.9394972 }}
           ></MapMarker>
         </Map>
         <CustomH3>체크리스트를 기반으로 찾은 최적의 장소는</CustomH3>
-        <h4>서울특별시 마포구 대흥동 34-15 입니다</h4>
+        <h4>서울특별시 서대문구 연세로 50-1 입니다</h4>
       </div>
 
       <div onClick={() => navigate("/newBusiness")}>
