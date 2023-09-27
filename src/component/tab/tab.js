@@ -46,13 +46,13 @@ export default function Tab() {
     },
     {
       index: 2,
-      tabTitle: "폐업정보",
-      tabCont: "🏚️ 이 위치의 최근 폐업정보",
+      tabTitle: "업종분석",
+      tabCont: "📊 이 상권의 업종분석",
     },
     {
       index: 3,
-      tabTitle: "업종분석",
-      tabCont: "📊 이 상권의 업종분석",
+      tabTitle: "폐업정보",
+      tabCont: "🏚️ 이 위치의 최근 폐업정보",
     },
   ];
 
@@ -211,7 +211,7 @@ export default function Tab() {
     { name: "제과제빵", value: 34, color04: "#ff0000" },
     { name: "패스트푸드", value: 40, color04: "#ff0000" },
     { name: "피자", value: 35, color04: "#ff0000" },
-    { name: "커피", value: 60, color04: "#ff0000" },
+    { name: "커피", value: 90, color04: "#ff0000" },
     { name: "아이스크림/빙수", value: 15, color04: "#ff0000" },
     { name: "기타 외국식", value: 25, color04: "#ff0000" },
     { name: "중식", value: 20, color04: "#ff0000" },
@@ -222,10 +222,10 @@ export default function Tab() {
     { name: "음료(커피 외)", value: 20, color04: "#ff0000" },
   ];
 
-  const cx = 150;
-  const cy = 200;
+  const cx = 180;
+  const cy = 160;
   const iR = 50;
-  const oR = 100;
+  const oR = 130;
   const value = 50;
 
   const needle = (value, data, cx, cy, iR, oR, color04) => {
@@ -349,6 +349,37 @@ export default function Tab() {
           {activeIndex === 2 && (
             // 폐업정보에 대한 리액트 차트를 렌더링하는 코드
             <div>
+              {/* <PopContainer> */}
+              <ResponsiveContainer width={350} height={350}>
+                <PieChart width={500} height={500}>
+                  <Pie
+                    dataKey="value"
+                    startAngle={0}
+                    endAngle={360}
+                    data={data03}
+                    cx={cx}
+                    cy={cy}
+                    innerRadius={iR}
+                    outerRadius={oR}
+                    fill="#8884d8"
+                    stroke="none"
+                  >
+                    {data03.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS2[index % COLORS2.length]}
+                      />
+                    ))}
+                  </Pie>
+                  {needle(value, data03, cx, cy, iR, oR, "#d0d000")}
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+              {/* </PopContainer> */}
+            </div>
+          )}
+          {activeIndex === 3 && (
+            <div>
               <ItemCard>
                 {/* <img src="../../image/num1.jpeg" width="100" height="130" /> */}
                 {/* <img src="../../image/코다차야.jpeg" alt="코다차야" /> */}
@@ -361,7 +392,6 @@ export default function Tab() {
                   <h5>영업기간: 1년 2개월</h5>
                 </ItemIfo>
               </ItemCard>
-
               <ItemCard>
                 {/* <img src="../../image/num2.jpeg" width="100" height="130" /> */}
                 <ImageItem src={image1} />
@@ -373,38 +403,6 @@ export default function Tab() {
                   <h5>영업기간: 3년 8개월</h5>
                 </ItemIfo>
               </ItemCard>
-            </div>
-          )}{" "}
-          {activeIndex === 3 && (
-            <div>
-              {" "}
-              <PopContainer>
-                <ResponsiveContainer width={350} height={350}>
-                  <PieChart width={400} height={400}>
-                    <Pie
-                      dataKey="value"
-                      startAngle={0}
-                      endAngle={360}
-                      data={data03}
-                      cx={cx}
-                      cy={cy}
-                      innerRadius={iR}
-                      outerRadius={oR}
-                      fill="#8884d8"
-                      stroke="none"
-                    >
-                      {data03.map((entry, index) => (
-                        <Cell
-                          key={`cell-${index}`}
-                          fill={COLORS2[index % COLORS2.length]}
-                        />
-                      ))}
-                    </Pie>
-                    {needle(value, data03, cx, cy, iR, oR, "#d0d000")}
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
-              </PopContainer>
             </div>
           )}
         </div>

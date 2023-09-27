@@ -18,7 +18,7 @@ const Analyze = () => {
   const navigate = useNavigate();
   return (
     <AnalyzeContainer>
-      <h2>마포구 대흥동은 "대학상권"입니다</h2>
+      <h2>마포구 대흥동은 "역세권"입니다</h2>
       <Tab />
       <div onClick={() => navigate("/recommend")}>
         <Custombutton
